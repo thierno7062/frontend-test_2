@@ -1,0 +1,54 @@
+<ion-item
+lines="none"
+[class]="chat?.sender !=current_user_id? 'sender':'user'">
+  <ion-label [slot]="chat?.sender== current_user_id? 'end':'start'" class="ion-text-wrap">
+    <ion-text>{{chat?.message}}</ion-text>
+    <ion-note>
+      <!-- <small>{{(chat?.createdAt)?.toDate() | date: 'HH:mm'}}</small> -->
+      <small>10:00AM</small>
+      <ion-icon [color]="chat?.sender == current_user_id? 'light':'primary'" name="checkmark-done-outline"></ion-icon>
+    </ion-note>
+  </ion-label>
+</ion-item>
+
+
+
+<!-- <ion-item *ngFor="let message of histMessage"> -->
+  <ion-row >
+    <!-- Message Text -->
+    <!-- <ion-col *ngIf="message.type==='TEXT' " size="9" class="message"
+      [offset]="message.IS_OWNER ? 3 : 0"
+      [ngClass]="{ 'my-message': message.IS_OWNER, 'other-message': !message.IS_OWNER }">
+      <b>{{ message.ORIG_NAME }}</b><br>
+      <span>{{ message.MESSAGE }}
+      </span>
+      <div class="time ion-text-right"><br>Envoyé le {{ formatUnixDate(message.CREATED_AT) }}</div>
+    </ion-col> -->
+
+    <!-- Message Photo -->
+    <!-- <ion-col *ngIf="message.type==='PHOTOS' " size="12" class="message"
+      [offset]="message.IS_OWNER ? 3 : 0"
+      [ngClass]="{ 'my-message': message.IS_OWNER, 'other-message': !message.IS_OWNER }">
+
+      <span>
+        <ion-card color="tertiary">
+          <img alt={{message.label}} src={{message.URL}} />
+          <ion-card-header>
+            <ion-card-title>{{message.label}}</ion-card-title>
+            <ion-card-subtitle>{{message.BOUTIQUE_NAME}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-button (click)="commanderArticle(message)" color="success" expand="block" shape="round" fill="outline" size="large">
+              <ion-icon name="cart" size="large" color="danger"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+        {{message.PRIX}} F / {{message.UNITE}}
+      </span>
+      <div class="time ion-text-right"><br>{{ formatUnixDate(message.CREATED_AT) }}</div>
+    </ion-col> -->
+
+
+  </ion-row>
+<!-- </ion-item> -->
